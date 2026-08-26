@@ -1121,13 +1121,12 @@
 
 
 
-
 <form id="contactForm">
     <div class="form-group">
         <input type="text" id="name" placeholder="Your Name" required>
     </div>
     <div class="form-group">
-        <input type="number" id="phone number" placeholder="Your phone number" required>
+        <input type="tel" id="phone" placeholder="Your phone number" required>
     </div>
     <div class="form-group">
         <input type="text" id="subject" placeholder="Subject">
@@ -1143,18 +1142,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
     e.preventDefault();
     
     let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
+    let userPhone = document.getElementById('phone').value;
     let subject = document.getElementById('subject').value;
     let msg = document.getElementById('message').value;
 
-    let phoneNumber = "27713376505"; // PUT YOUR WHATSAPP NUMBER HERE with country code, no + or spaces. e.g. 27761234567
+    let myWhatsAppNumber = "27713376505"; // your number that will RECEIVE messages
     
-    let text = `New Message from Website:%0A%0AName: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${msg}`;
+    let text = `New Message from Website:%0A%0AName: ${name}%0APhone: ${userPhone}%0ASubject: ${subject}%0AMessage: ${msg}`;
     
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+    window.open(`https://wa.me/${myWhatsAppNumber}?text=${text}`, '_blank');
 });
 </script>
-
 
 
 
